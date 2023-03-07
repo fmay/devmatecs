@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Neo4j.Driver" Version="4.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Services\" />
+    <None Remove="Repository\" />
+    <None Remove="Repository\Db\" />
+    <None Remove="Domain\" />
+    <None Remove="Domain\User\" />
+    <None Remove="Repository\Db\User\" />
+    <None Remove="Core\" />
+    <None Remove="Repository\Db\Finder\" />
+    <None Remove="Domain\Finder\" />
+    <None Remove=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Repository\Db\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Domain\User\" />
+    <Folder Include="Repository\Db\User\" />
+    <Folder Include="Core\" />
+    <Folder Include="Repository\Db\Finder\" />
+    <Folder Include="Domain\Finder\" />
+  </ItemGroup>
+</Project>
