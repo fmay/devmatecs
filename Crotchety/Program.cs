@@ -51,3 +51,4 @@ app.UseMiddleware<GlobalExceptionHandler>();
 app.MapControllers();
 
 app.Run();
+
